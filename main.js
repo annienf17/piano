@@ -1,3 +1,13 @@
+//audio
+const keysAudio = document.querySelectorAll(".key");
+keysAudio.forEach((key) => {
+  key.addEventListener("click", () => playNote(key));
+});
+function playNote(key) {
+  const noteAudio = document.getElementById(key.dataset.note);
+  noteAudio.currentTime = 0;
+  noteAudio.play();
+}
 // The keys and notes variables store the piano keys
 const keys = [
   "c-key",
@@ -7,7 +17,6 @@ const keys = [
   "g-key",
   "a-key",
   "b-key",
-  "high-c-key",
   "c-sharp-key",
   "d-sharp-key",
   "f-sharp-key",
@@ -59,8 +68,8 @@ nextOne.onclick = function () {
   nextTwo.hidden = false;
   nextOne.hidden = true;
   //point 10 po wcisnieciu button zmienia sie music guide
-  document.getElementById("letter-note-five").innerHTML = "D";
-  document.getElementById("letter-note-six").innerHTML = "C";
+  document.getElementById("letter-note-five").innerHTML = "A";
+  document.getElementById("letter-note-six").innerHTML = "G";
 };
 
 // Write anonymous event handler property and function for the second progress button
@@ -71,10 +80,10 @@ nextTwo.onclick = function () {
   //13 zmienia napis po kliknieciu przycisku line
   document.getElementById("word-five").innerHTML = "DEAR";
   document.getElementById("word-six").innerHTML = "FRI";
-  document.getElementById("letter-note-three").innerHTML = "G";
-  document.getElementById("letter-note-four").innerHTML = "E";
-  document.getElementById("letter-note-five").innerHTML = "C";
-  document.getElementById("letter-note-six").innerHTML = "B";
+  document.getElementById("letter-note-three").innerHTML = "D";
+  document.getElementById("letter-note-four").innerHTML = "B";
+  document.getElementById("letter-note-five").innerHTML = "G";
+  document.getElementById("letter-note-six").innerHTML = "F";
 };
 // Write anonymous event handler property and function for the third progress button
 nextThree.onclick = function () {
@@ -89,12 +98,12 @@ nextThree.onclick = function () {
   document.getElementById("word-five").innerHTML = "TO";
   document.getElementById("word-six").innerHTML = "YOU!";
 
-  document.getElementById("letter-note-one").innerHTML = "F";
-  document.getElementById("letter-note-two").innerHTML = "F";
-  document.getElementById("letter-note-three").innerHTML = "E";
-  document.getElementById("letter-note-four").innerHTML = "C";
-  document.getElementById("letter-note-five").innerHTML = "D";
-  document.getElementById("letter-note-six").innerHTML = "C";
+  document.getElementById("letter-note-one").innerHTML = "C";
+  document.getElementById("letter-note-two").innerHTML = "C";
+  document.getElementById("letter-note-three").innerHTML = "B";
+  document.getElementById("letter-note-four").innerHTML = "G";
+  document.getElementById("letter-note-five").innerHTML = "A";
+  document.getElementById("letter-note-six").innerHTML = "G";
 };
 
 // This is the event handler property and function for the startOver button
@@ -102,15 +111,15 @@ startOver.onclick = function () {
   nextOne.hidden = false;
   startOver.hidden = true;
   document.getElementById("word-one").innerHTML = "HAP-";
-  document.getElementById("letter-note-one").innerHTML = "G";
+  document.getElementById("letter-note-one").innerHTML = "D";
   document.getElementById("word-two").innerHTML = "PY";
-  document.getElementById("letter-note-two").innerHTML = "G";
+  document.getElementById("letter-note-two").innerHTML = "D";
   document.getElementById("word-three").innerHTML = "BIRTH-";
-  document.getElementById("letter-note-three").innerHTML = "A";
+  document.getElementById("letter-note-three").innerHTML = "E";
   document.getElementById("word-four").innerHTML = "DAY";
-  document.getElementById("letter-note-four").innerHTML = "G";
+  document.getElementById("letter-note-four").innerHTML = "D";
   document.getElementById("word-five").innerHTML = "TO";
-  document.getElementById("letter-note-five").innerHTML = "C";
+  document.getElementById("letter-note-five").innerHTML = "G";
   document.getElementById("word-six").innerHTML = "YOU!";
-  document.getElementById("letter-note-six").innerHTML = "B";
+  document.getElementById("letter-note-six").innerHTML = "F";
 };
